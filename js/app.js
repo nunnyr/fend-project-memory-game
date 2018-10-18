@@ -200,6 +200,8 @@ function writeModalStats() {
 
 }
 
+toggleModal();
+
 
 
 

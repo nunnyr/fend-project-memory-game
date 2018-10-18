@@ -7,14 +7,17 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Welcome to Matching Game! Click the cards to find a match.
+The timer will begin as soon as you make your first click,
+the more moves you take the less stars you'll accumulate at the end.
 
-To get started, open `js/app.js` and start building out the app's functionality
+Match all 16 cards and see your game stats at the end!
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Enjoy!
+
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is for the Memory Game Project for Udacity.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
