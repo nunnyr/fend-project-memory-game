@@ -29,7 +29,8 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
 
@@ -72,13 +73,15 @@ h1 {
 }
 
 .deck .card.show {
-    font-size: 33px;
+    font-size: 50px;
 }
 
 .deck .card.match {
     cursor: default;
     background: #02ccba;
-    font-size: 33px;
+    font-size: 40px;
+    transform: rotateY(10deg);
+    
 }
 
 /*
@@ -88,7 +91,7 @@ h1 {
  .hide {
      display: none;
  }
- .modal_background {
+ .modal__background {
      position: absolute;
      top: 0;
      left: 0;
@@ -100,7 +103,7 @@ h1 {
 .modal_body {
     position: relative;
     width: 400px;
-    height: 400px;
+    /* height: 400px; */
     top: 50%;
     left: 50%;
     background: #ffffff;
@@ -124,7 +127,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 10rem;
     border-bottom: 1px solid gray;
 }
 
@@ -137,6 +140,8 @@ h1 {
 .modal_button {
     width: 60px;
     height: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 8px #888888;
 }
 
 .score-panel {
@@ -161,3 +166,4 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
