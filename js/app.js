@@ -170,3 +170,10 @@ function isClickValid(clickTarget) {
 function stopClock() {
     clearInterval(clockId);
 }
+
+function toggleModal() {
+    const modal = document.querySelector('.modal_background');
+    modal.classList.toggle('hide')
+}
+
+toggleModal();//open modal 
