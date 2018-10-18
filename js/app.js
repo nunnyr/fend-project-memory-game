@@ -39,19 +39,31 @@ function shuffle(array) {
 const deck = document.querySelector('.deck');
 let toggledCards = []
 let moves = 0; 
+let clockOff = true;
+let time = 0;
+let clockId;
 
+// deck.addEventListener('click', event => {
+//     const clickTarget = event.target;
+//     if(clickTarget.classList.contains('card') && toggledCards.length < 2 && !toggledCards.includes(clickTarget)
+//     ) {
+//         toggleCard(clickTarget);
+//         addToggleCard(clickTarget);
+//         if(toggledCards.length === 2) {
+//         checkForMatch(clickTarget);
+//         addMove();
+//         checkScore();
+//         //console.log("2 cards")
+//         }
+//     }
+// })
 
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
-    if(clickTarget.classList.contains('card') && toggledCards.length < 2 && !toggledCards.includes(clickTarget)
-    ) {
-        toggleCard(clickTarget);
-        addToggleCard(clickTarget);
-        if(toggledCards.length === 2) {
-        checkForMatch(clickTarget);
-        addMove();
-        checkScore();
-        //console.log("2 cards")
+    if(isClickValid(clickTarget)) {
+        if(clockOff){
+            startClock();
+            clockOff = false;
         }
     }
 })
@@ -131,3 +143,30 @@ function isClickValid(clickTarget) {
 
  hideStar();
  hideStar();
+
+ function startClock() {
+        clockId = setInterval(() => {
+         time++;
+         displayTime();
+         console.log(time)
+     }, 1000);
+ }
+ startClock();
+
+ function displayTime() {
+     const clock = document.querySelector('.clock')
+     console.log(clock);
+     const minutes = Math.floor(time / 60);
+     const seconds = time % 60; 
+     clock.innerHTML = time;
+     if( seconds < 10) {
+         clock.innerHTML = `${minutes}:0${seconds}`
+
+     } else {
+         clock.innerHTML = `${minutes}: ${seconds}`
+     }
+ }
+
+function stopClock() {
+    clearInterval(clockId);
+}
