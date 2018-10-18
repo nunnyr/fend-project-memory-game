@@ -38,6 +38,7 @@ function shuffle(array) {
  */
 const deck = document.querySelector('.deck');
 let toggledCards = []
+let moves = 0; 
 
 
 deck.addEventListener('click', event => {
@@ -48,7 +49,9 @@ deck.addEventListener('click', event => {
         addToggleCard(clickTarget);
         if(toggledCards.length === 2) {
         checkForMatch(clickTarget);
-        console.log("2 cards")
+        addMove();
+        checkScore();
+        //console.log("2 cards")
         }
     }
 })
@@ -103,3 +106,28 @@ function isClickValid(clickTarget) {
 }
 
  shuffleDeck();
+
+ function addMove() {
+     moves++;
+     const movesText = document.querySelector('.moves');
+     movesText.innerHTML = moves;
+ }
+
+ function checkScore() {
+     if (moves === 16 || moves === 24) {
+         removeStar();
+     }
+ }
+
+ function hideStar(){
+     const starList = document.querySelectorAll('.stars li')
+     for(star of starList) {
+         if(star.style.display = 'none') {
+             star.style.display = 'none';
+             break;
+         };
+     }
+ }
+
+ hideStar();
+ hideStar();
